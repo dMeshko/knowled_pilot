@@ -1,0 +1,12 @@
+div[ui-view="footer"] a{
+    text-decoration: none;
+    color: #000;
+}
+
+div[ui-view="footer"] a:hover{
+    opacity: 0.7;
+}
+
+div[ui-view="footer"] ul.second-level{
+    list-style-type: none;
+}
