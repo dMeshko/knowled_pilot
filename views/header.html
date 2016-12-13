@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Knowledge Pilot</a>
+            <a class="navbar-brand" ui-sref="app.home">Knowledge Pilot</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,25 +22,25 @@
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <li ui-sref-active="active"><a ui-sref="app.home">Home</a></li>
+                <li ui-sref-active="active" class="dropdown">
+                    <a ui-sref="app.learn" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Learn <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Biology</a></li>
-                        <li><a href="#">IT</a></li>
-                        <li><a href="#">Math</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.learn.biology">Biology</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.learn.it">IT</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.learn.math">Math</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <li ui-sref-active="active" class="dropdown">
+                    <a ui-sref="app.quiz" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Quiz <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Biology</a></li>
-                        <li><a href="#">IT</a></li>
-                        <li><a href="#">Math</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.quiz.biology">Biology</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.quiz.it">IT</a></li>
+                        <li ui-sref-active="active"><a  ui-sref="app.quiz.math">Math</a></li>
                     </ul>
                 </li>
             </ul>
