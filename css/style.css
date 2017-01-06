@@ -18,3 +18,8 @@ div[ui-view="footer"] ul.second-level{
     display: block;
     margin-top: 0; // remove the gap so it doesn't close
 }
+
+.content{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
