@@ -42,7 +42,70 @@ app.config([
             url: "/biology",
             views: {
                 "content@": {
-                    templateUrl: "./views/learn/biology.html"
+                    templateUrl: "./views/learn/biology/biology.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.biology.basics", {
+                url: "/biology_basics",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/biology/biology_basics.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.biology.cell", {
+            url: "/biology_cell_anatomy",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/biology/biology_cell_anatomy.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.biology.evolution", {
+            url: "/biology_evolution",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/biology/biology_evolution.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.biology.kingdoms", {
+            url: "/biology_kingdoms_of_life",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/biology/biology_kingdoms_life.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.biology.pyramid", {
+            url: "/biology_pyramid_struct_life",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/biology/biology_pyramid_struct_life.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.biology.taxonomy", {
+            url: "/biology_taxonomy",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/biology/biology_taxonomy.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.biology.diss", {
+            url: "/biology_world_diss",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/biology/biology_world_diss.html"
                 }
             }
         });
