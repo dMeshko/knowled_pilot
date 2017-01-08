@@ -4,7 +4,7 @@
             <ul class="nav nav-pills nav-stacked" style="padding-top: 30px;">
                 <li id="programming"><a ui-sref="app.learn.it" ng-click="toggleLevel2P()">Programming  <i class="fa fa-caret-down pull-right" ng-if="!showLevel2P" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2P" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
                 <li ng-show="showLevel2P" id="web"><a ui-sref="app.learn.it" ng-click="toggleLevel3W()">&nbsp;&nbsp;Web <i class="fa fa-caret-down pull-right" ng-if="!showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
-                <li ng-show="showLevel3W"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Front-End</a></li>
+                <li ng-show="showLevel3W"><a ui-sref="app.learn.it.frontend">&nbsp;&nbsp;&nbsp;&nbsp;Front-End</a></li>
                 <li ng-show="showLevel3W"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Back-End</a></li>
                 <li ng-show="showLevel2P" id="mobile"><a ui-sref="app.learn.it" ng-click="toggleLevel3M()">&nbsp;&nbsp;Mobile <i class="fa fa-caret-down pull-right" ng-if="!showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
                 <li ng-show="showLevel3M"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Android</a></li>
@@ -14,8 +14,8 @@
                 <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Linux</a></li>
                 <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Mac</a></li>
                 <li id="design"><a ui-sref="app.learn.it" ng-click="toggleLevel2D()">Design <i class="fa fa-caret-down pull-right" ng-if="!showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
-                <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Windows</a></li>
-                <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Linux</a></li>
+                <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Photoshop</a></li>
+                <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Adobe Illustrator</a></li>
 
                 <li style="margin-top: 15px; border: 1px solid #eb6864"><a href="#"><i class="fa fa-book"></i> Test your knowledge</a></li>
             </ul>

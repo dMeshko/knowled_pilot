@@ -84,5 +84,9 @@ app.controller("HomeController", ["$scope", function ($scope){
         var desktop = angular.element(document.querySelector('#desktop'));
         desktop.addClass('active');
     };
+    
+    $scope.goToFrontEnd = function () {
+
+    };
 
 }]);

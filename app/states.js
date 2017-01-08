@@ -114,7 +114,16 @@ app.config([
             url: "/it",
             views: {
                 "content@": {
-                    templateUrl: "./views/learn/it.html"
+                    templateUrl: "./views/learn/it/it.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.it.frontend", {
+            url: "/frontend",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/it/front_end.html"
                 }
             }
         });
@@ -123,7 +132,25 @@ app.config([
             url: "/math",
             views: {
                 "content@": {
-                    templateUrl: "./views/learn/math.html"
+                    templateUrl: "./views/learn/math/math.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.math.algebra", {
+            url: "/algebra",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/math/algebra.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.math.algebra.expressions", {
+            url: "/math/algebra/expressions",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/math/algebra_expressions.html"
                 }
             }
         });
@@ -163,5 +190,6 @@ app.config([
                 }
             }
         });
+
 
     }]);

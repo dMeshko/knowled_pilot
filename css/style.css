@@ -23,3 +23,41 @@ div[ui-view="footer"] ul.second-level{
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+img.zoom:hover{
+    -webkit-transform:scale(1.08); /* Safari and Chrome */
+    -moz-transform:scale(1.08); /* Firefox */
+    -ms-transform:scale(1.08); /* IE 9 */
+    -o-transform:scale(1.08); /* Opera */
+    transform:scale(1.08);
+}
+
+a.topic:hover{
+    text-decoration: none;
+}
+
+a.next:hover{
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+a.topic .panel-body:hover{
+    background-color: #F8F8F8 ;
+}
+
+a.next{
+    font-size: 16px;
+}
+
+.thumb{
+    height: 80px;
+}
+
+.label-title{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+img.top-img{
+    height: 250px;
+}
