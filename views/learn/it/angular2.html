@@ -1,0 +1,39 @@
+<div class = "container-fluid" ng-controller="HomeController">
+    <div class = "row" style="margin-bottom: 30px;">
+        <div class = "col-md-3">
+            <ul class="nav nav-pills nav-stacked" style="padding-top: 30px;">
+                <li id="programming"><a ui-sref="app.learn.it" ng-click="toggleLevel2P()">Programming  <i class="fa fa-caret-down pull-right" ng-if="!showLevel2P" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2P" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel2P" id="web"><a ui-sref="app.learn.it" ng-click="toggleLevel3W()">&nbsp;&nbsp;Web <i class="fa fa-caret-down pull-right" ng-if="!showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel3W"><a ui-sref="app.learn.it.frontend">&nbsp;&nbsp;&nbsp;&nbsp;Front-End</a></li>
+                <li ng-show="showLevel3W"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Back-End</a></li>
+                <li ng-show="showLevel2P" id="mobile"><a ui-sref="app.learn.it" ng-click="toggleLevel3M()">&nbsp;&nbsp;Mobile <i class="fa fa-caret-down pull-right" ng-if="!showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel3M"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Android</a></li>
+                <li ng-show="showLevel3M"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;IOS</a></li>
+                <li ng-show="showLevel2P" id="desktop"><a ui-sref="app.learn.it" ng-click="toggleLevel3D()">&nbsp;&nbsp;Desktop <i class="fa fa-caret-down pull-right" ng-if="!showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Windows</a></li>
+                <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Linux</a></li>
+                <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Mac</a></li>
+                <li id="design"><a ui-sref="app.learn.it" ng-click="toggleLevel2D()">Design <i class="fa fa-caret-down pull-right" ng-if="!showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Photoshop</a></li>
+                <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Adobe Illustrator</a></li>
+
+                <li style="margin-top: 15px; border: 1px solid #eb6864"><a href="#"><i class="fa fa-book"></i> Test your knowledge</a></li>
+            </ul>
+        </div>
+        <div class = "col-md-9 content">
+            <h1>Angular 2 Introduction</h1>
+            <img src="./img/angular2.png" class="img-responsive" style="margin: 30px 0;">
+            <p>Angular 2 is the next version of Google’s massively popular MV* framework for building complex applications in the browser (and beyond).</p>
+            <p>When Angular 2 was announced in October 2014 at the ngEurope conference, the ngCommunity was up in arms: what did this mean for their favorite framework they invested so much time into learning and building real things with? A lot of Angular developers were worried that Angular 2 would spell the end for Angular.</p>
+            <p>What we found when we started building with Angular 2, though, was something beyond our wildest dreams: a faster, more powerful, cleaner, and easier to use tool than we had with Angular 1. We found a tool that embraced future web standards and brought ES6 to more developers around the world.</p>
+            <p>In many ways, Angular 2 still felt like Angular, it was just based on new JavaScript standards and using best-practices developed in the years after the first Angular release. “Angular” had become a design pattern with multiple implementations.</p>
+            <p>We realized that Angular 2 would make it easier to use Ionic, not harder. That it would give us performance gains we desperately needed to push forward our goal of making the web win on mobile. That it would make it easier to write clean, testable code that would run on more devices and platforms. That it would help us empower more web developers to build great mobile apps.</p>
+            <p>We hope you find Angular 2 as inspiring as we have, and we hope this guide helps you get there as quickly as possible.</p>
+
+            <div class="col-md-12">
+                <hr/>
+                <a ui-sref="app.learn.it.angular2.components" class="pull-right next">Components <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

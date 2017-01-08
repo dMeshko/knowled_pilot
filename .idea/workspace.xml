@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15137b9c-d422-48cf-a41e-e10dde765ba5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/learn/it/front_end.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/learn/math/algebra.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/learn/math/algebra_expressions.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/learn/it.html" afterPath="$PROJECT_DIR$/views/learn/it/it.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/learn/math.html" afterPath="$PROJECT_DIR$/views/learn/math/math.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/learn/it/angular2-components.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/learn/it/angular2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home-controller.js" afterPath="$PROJECT_DIR$/app/controllers/home-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/states.js" afterPath="$PROJECT_DIR$/app/states.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.html" afterPath="$PROJECT_DIR$/views/footer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.html" afterPath="$PROJECT_DIR$/views/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/biology/biology_basics.html" afterPath="$PROJECT_DIR$/views/learn/biology/biology_basics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/biology/biology_cell_anatomy.html" afterPath="$PROJECT_DIR$/views/learn/biology/biology_cell_anatomy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/biology/biology_evolution.html" afterPath="$PROJECT_DIR$/views/learn/biology/biology_evolution.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/biology/biology_kingdoms_life.html" afterPath="$PROJECT_DIR$/views/learn/biology/biology_kingdoms_life.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/biology/biology_pyramid_struct_life.html" afterPath="$PROJECT_DIR$/views/learn/biology/biology_pyramid_struct_life.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/biology/biology_taxonomy.html" afterPath="$PROJECT_DIR$/views/learn/biology/biology_taxonomy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/biology/biology_world_diss.html" afterPath="$PROJECT_DIR$/views/learn/biology/biology_world_diss.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/quiz/biology.html" afterPath="$PROJECT_DIR$/views/quiz/biology.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/quiz/it.html" afterPath="$PROJECT_DIR$/views/quiz/it.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/quiz/math.html" afterPath="$PROJECT_DIR$/views/quiz/math.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/learn/it/front_end.html" afterPath="$PROJECT_DIR$/views/learn/it/front_end.html" />
     </list>
     <ignored path="knowledge-pilot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,34 +45,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/footer.html">
+      <file leaf-file-name="biology_basics.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/learn/biology/biology_basics.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
-              <folding />
+            <state relative-caret-position="481">
+              <caret line="66" column="22" selection-start-line="63" selection-start-column="16" selection-end-line="66" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#6809#6816#0" expanded="true" />
+                <element signature="e#10608#10615#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+            <state relative-caret-position="289">
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="it.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/learn/it/it.html">
+      <file leaf-file-name="angular2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/learn/it/angular2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="481">
+              <caret line="34" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="6" />
               <folding>
                 <element signature="e#979#985#0" expanded="true" />
                 <element signature="e#985#991#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,22 +88,20 @@
       <file leaf-file-name="front_end.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/learn/it/front_end.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="31" column="61" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="61" />
+            <state relative-caret-position="357">
+              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="algebra.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/learn/math/algebra.html">
+      <file leaf-file-name="states.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/states.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+            <state relative-caret-position="453">
+              <caret line="139" column="62" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#0#43#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -118,9 +110,45 @@
       <file leaf-file-name="home-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/home-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="487">
+              <caret line="89" column="51" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular2-components.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/learn/it/angular2-components.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="52" column="60" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
+              <folding>
+                <element signature="e#979#985#0" expanded="true" />
+                <element signature="e#985#991#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#3750#3754#0" expanded="true" />
+                <element signature="e#3757#3761#0" expanded="true" />
+                <element signature="e#3788#3792#0" expanded="true" />
+                <element signature="e#3820#3824#0" expanded="true" />
+                <element signature="e#3835#3839#0" expanded="true" />
+                <element signature="e#3846#3850#0" expanded="true" />
+                <element signature="e#3850#3854#0" expanded="true" />
+                <element signature="e#3858#3862#0" expanded="true" />
+                <element signature="e#4216#4220#0" expanded="true" />
+                <element signature="e#4232#4236#0" expanded="true" />
+                <element signature="e#4237#4241#0" expanded="true" />
+                <element signature="e#4254#4258#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,13 +193,15 @@
         <option value="$PROJECT_DIR$/views/learn/biology/biology_pyramid_struct_life.html" />
         <option value="$PROJECT_DIR$/views/learn/biology/biology_kingdoms_life.html" />
         <option value="$PROJECT_DIR$/views/learn/it/it.html" />
-        <option value="$PROJECT_DIR$/app/states.js" />
+        <option value="$PROJECT_DIR$/views/footer.html" />
+        <option value="$PROJECT_DIR$/views/home.html" />
+        <option value="$PROJECT_DIR$/views/learn/math/algebra.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/app/controllers/home-controller.js" />
         <option value="$PROJECT_DIR$/views/learn/it/front_end.html" />
-        <option value="$PROJECT_DIR$/views/learn/math/algebra.html" />
-        <option value="$PROJECT_DIR$/views/footer.html" />
-        <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/views/home.html" />
+        <option value="$PROJECT_DIR$/app/states.js" />
+        <option value="$PROJECT_DIR$/views/learn/it/angular2.html" />
+        <option value="$PROJECT_DIR$/views/learn/it/angular2-components.html" />
       </list>
     </option>
   </component>
@@ -263,24 +293,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="quiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knowledge-pilot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knowledge_pilot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="learn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -348,20 +360,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="biology" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knowledge-pilot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knowledge_pilot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -529,12 +527,12 @@
       <workItem from="1483656165738" duration="646000" />
       <workItem from="1483714466091" duration="19230000" />
       <workItem from="1483784371454" duration="14641000" />
-      <workItem from="1483873033598" duration="16010000" />
+      <workItem from="1483873033598" duration="21068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70266000" />
+    <option name="totallyTimeSpent" value="75324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -576,23 +574,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/states.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -809,20 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/learn/biology/biology_basics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#6809#6816#0" expanded="true" />
-            <element signature="e#10608#10615#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/learn/biology/biology_cell_anatomy.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -897,59 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/learn/it/it.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#979#985#0" expanded="true" />
-            <element signature="e#985#991#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/states.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/learn/it/front_end.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="31" column="61" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="60" column="3" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/learn/math/algebra_expressions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -961,6 +875,14 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -977,10 +899,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/learn/it/it.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <element signature="e#979#985#0" expanded="true" />
+            <element signature="e#985#991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/learn/math/algebra.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+        <state relative-caret-position="442">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -989,11 +922,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="89" column="51" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+        <state relative-caret-position="289">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/states.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="139" column="62" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/learn/biology/biology_basics.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="66" column="22" selection-start-line="63" selection-start-column="16" selection-end-line="66" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#6809#6816#0" expanded="true" />
+            <element signature="e#10608#10615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/learn/it/front_end.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/learn/it/angular2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="34" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="6" />
+          <folding>
+            <element signature="e#979#985#0" expanded="true" />
+            <element signature="e#985#991#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/learn/it/angular2-components.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="52" column="60" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
+          <folding>
+            <element signature="e#979#985#0" expanded="true" />
+            <element signature="e#985#991#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#3750#3754#0" expanded="true" />
+            <element signature="e#3757#3761#0" expanded="true" />
+            <element signature="e#3788#3792#0" expanded="true" />
+            <element signature="e#3820#3824#0" expanded="true" />
+            <element signature="e#3835#3839#0" expanded="true" />
+            <element signature="e#3846#3850#0" expanded="true" />
+            <element signature="e#3850#3854#0" expanded="true" />
+            <element signature="e#3858#3862#0" expanded="true" />
+            <element signature="e#4216#4220#0" expanded="true" />
+            <element signature="e#4232#4236#0" expanded="true" />
+            <element signature="e#4237#4241#0" expanded="true" />
+            <element signature="e#4254#4258#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

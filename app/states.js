@@ -128,6 +128,24 @@ app.config([
             }
         });
 
+        $stateProvider.state("app.learn.it.angular2", {
+            url: "/angular2/introduction",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/it/angular2.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.it.angular2.components", {
+            url: "/angular2/components",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/it/angular2-components.html"
+                }
+            }
+        });
+
         $stateProvider.state("app.learn.math", {
             url: "/math",
             views: {

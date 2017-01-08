@@ -8,6 +8,7 @@ app.controller("HomeController", ["$scope", function ($scope){
     $scope.showLevel3W = false;
     $scope.showLevel3M = false;
     $scope.showLevel3D = false;
+    $scope.showAngular2 = false;
 
     $scope.toggleLevel2P = function () {
         $scope.showLevel2P = !$scope.showLevel2P;
@@ -85,8 +86,8 @@ app.controller("HomeController", ["$scope", function ($scope){
         desktop.addClass('active');
     };
     
-    $scope.goToFrontEnd = function () {
-
+    $scope.toggleAngular2 = function () {
+        $scope.showAngular2 = !$scope.showAngular2;
     };
 
 }]);
