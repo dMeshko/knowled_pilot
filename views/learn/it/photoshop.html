@@ -1,0 +1,175 @@
+<div class = "container-fluid" ng-controller="HomeController">
+<div class = "row" style="margin-bottom: 30px;">
+    <div class = "col-md-3">
+    <ul class="nav nav-pills nav-stacked" style="padding-top: 30px;">
+        <li id="programming"><a ui-sref="app.learn.it.photoshop" ng-click="toggleLevel2P()">Programming  <i class="fa fa-caret-down pull-right" ng-if="!showLevel2P" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2P" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+        <li ng-show="showLevel2P" id="web"><a ui-sref="app.learn.it.photoshop" ng-click="toggleLevel3W()">&nbsp;&nbsp;Web <i class="fa fa-caret-down pull-right" ng-if="!showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+        <li ng-show="showLevel3W" class="active"><a ui-sref="app.learn.it.frontend">&nbsp;&nbsp;&nbsp;&nbsp;Front-End</a></li>
+        <li ng-show="showLevel3W"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Back-End</a></li>
+        <li ng-show="showLevel2P" id="mobile"><a ui-sref="app.learn.it.photoshop" ng-click="toggleLevel3M()">&nbsp;&nbsp;Mobile <i class="fa fa-caret-down pull-right" ng-if="!showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+        <li ng-show="showLevel3M"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Android</a></li>
+        <li ng-show="showLevel3M"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;IOS</a></li>
+        <li ng-show="showLevel2P" id="desktop"><a ui-sref="app.learn.it.photoshop" ng-click="toggleLevel3D()">&nbsp;&nbsp;Desktop <i class="fa fa-caret-down pull-right" ng-if="!showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+        <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Windows</a></li>
+        <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Linux</a></li>
+        <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Mac</a></li>
+        <li id="design"><a ui-sref="app.learn.it.photoshop" ng-click="toggleLevel2D()">Design <i class="fa fa-caret-down pull-right" ng-if="!showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+        <li ng-show="showLevel2D"  class="active"><a ui-sref="app.learn.it.photoshop">&nbsp;&nbsp;Photoshop</a></li>
+        <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Adobe Illustrator</a></li>
+
+        <li style="margin-top: 15px; border: 1px solid #eb6864"><a href="#"><i class="fa fa-book"></i> Test your knowledge</a></li>
+    </ul>
+</div>
+
+<div class = "col-md-9 content">
+    <a ui-sref="app.learn.math.algebra.expressions" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop1.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>Using A Photo As Its Own Background With Photoshop</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop2.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>Add A Rainbow To A Photo With Photoshop</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop3.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>How To Rotate And Straighten Images In Photoshop CC</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop6.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3 class="label-title">Reducing Wrinkles With The Healing Brush In Photoshop </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop4.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>Creating A New Background Layer Action In Photoshop</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop5.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>Understanding Layers In Photoshop</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop8.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>The Color Replacement Tool In Photoshop</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop7.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>Easily Smooth And Soften Skin In A Photo With Photoshop</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="topic">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-xs-4">
+                        <img src="./img/photoshop9.jpg" class="img-responsive thumb">
+                    </div>
+                    <div class="col-xs-8">
+                        <h3>The New Content-Aware Crop Tool In Photoshop CC</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <div class="col-xs-8 col-xs-offset-4">
+    <nav>
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</div>
+</div>
+</div>

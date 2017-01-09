@@ -6,15 +6,15 @@
                 <li ng-show="showLevel2P" id="web"><a ui-sref="app.learn.it.frontend" ng-click="toggleLevel3W()">&nbsp;&nbsp;Web <i class="fa fa-caret-down pull-right" ng-if="!showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3W" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
                 <li ng-show="showLevel3W" class="active"><a ui-sref="app.learn.it.frontend">&nbsp;&nbsp;&nbsp;&nbsp;Front-End</a></li>
                 <li ng-show="showLevel3W"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Back-End</a></li>
-                <li ng-show="showLevel2P" id="mobile"><a ui-sref="app.learn.it" ng-click="toggleLevel3M()">&nbsp;&nbsp;Mobile <i class="fa fa-caret-down pull-right" ng-if="!showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel2P" id="mobile"><a ui-sref="app.learn.it.frontend" ng-click="toggleLevel3M()">&nbsp;&nbsp;Mobile <i class="fa fa-caret-down pull-right" ng-if="!showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3M" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
                 <li ng-show="showLevel3M"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;Android</a></li>
                 <li ng-show="showLevel3M"><a href = "#">&nbsp;&nbsp;&nbsp;&nbsp;IOS</a></li>
-                <li ng-show="showLevel2P" id="desktop"><a ui-sref="app.learn.it" ng-click="toggleLevel3D()">&nbsp;&nbsp;Desktop <i class="fa fa-caret-down pull-right" ng-if="!showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel2P" id="desktop"><a ui-sref="app.learn.it.frontend" ng-click="toggleLevel3D()">&nbsp;&nbsp;Desktop <i class="fa fa-caret-down pull-right" ng-if="!showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel3D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
                 <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Windows</a></li>
                 <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Linux</a></li>
                 <li ng-show="showLevel3D"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Mac</a></li>
-                <li id="design"><a ui-sref="app.learn.it" ng-click="toggleLevel2D()">Design <i class="fa fa-caret-down pull-right" ng-if="!showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
-                <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Photoshop</a></li>
+                <li id="design"><a ui-sref="app.learn.it.frontend" ng-click="toggleLevel2D()">Design <i class="fa fa-caret-down pull-right" ng-if="!showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i> <i class="fa fa-caret-up pull-right" ng-if="showLevel2D" aria-hidden="true" style="padding-top: 3px;"></i></a></li>
+                <li ng-show="showLevel2D"><a ui-sref="app.learn.it.photoshop">&nbsp;&nbsp;Photoshop</a></li>
                 <li ng-show="showLevel2D"><a href="#">&nbsp;&nbsp;Adobe Illustrator</a></li>
 
                 <li style="margin-top: 15px; border: 1px solid #eb6864"><a href="#"><i class="fa fa-book"></i> Test your knowledge</a></li>
@@ -105,6 +105,28 @@
                     </div>
                 </div>
             </a>
+
+            <div class="col-xs-8 col-xs-offset-4">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </div>

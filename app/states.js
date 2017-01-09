@@ -137,6 +137,15 @@ app.config([
             }
         });
 
+        $stateProvider.state("app.learn.it.photoshop", {
+            url: "/photoshop",
+            views: {
+                "content@": {
+                    templateUrl: "./views/learn/it/photoshop.html"
+                }
+            }
+        });
+
         $stateProvider.state("app.learn.it.angular2.components", {
             url: "/angular2/components",
             views: {
