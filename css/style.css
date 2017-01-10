@@ -36,12 +36,12 @@ a.topic:hover{
     text-decoration: none;
 }
 
-a.next:hover, .hidden-list a:hover{
+a.next:hover, .hidden-list a:hover, .quiz a:hover{
     text-decoration: none;
     opacity: 0.6;
 }
 
-a.topic .panel-body:hover{
+a.topic .panel-body:hover, .quiz .panel-body:hover{
     background-color: #F8F8F8 ;
 }
 
