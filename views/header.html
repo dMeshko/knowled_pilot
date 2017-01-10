@@ -15,9 +15,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form class="navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" ng-model="searchPhrase" class="form-control" placeholder="Search">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        <button ng-click="search()" class="btn btn-primary"><i class="fa fa-search"></i></button>
                     </span>
                 </div>
             </form>

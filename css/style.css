@@ -65,3 +65,18 @@ img.top-img{
 ul.hidden-list{
     list-style-type: none;
 }
+
+.inline{
+    display: inline-block;
+}
+
+.inline.picker{
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid red;
+}
+
+.inline.picker:hover{
+    cursor: pointer;
+    background: yellow;
+}

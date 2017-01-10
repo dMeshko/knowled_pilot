@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Test your knowledge!</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="inline picker" ng-repeat="question in quiz" ng-click="loadQuestion($index)">
+                {{ $index + 1 }}
+            </div>
+        </div>
+        <div class="col-md-9">
+            <h4>{{ activeQuestion.question }}</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer"> {{ activeQuestion.answers[0].text }}</label>
+                </div>
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer"> {{ activeQuestion.answers[1].text }}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer"> {{ activeQuestion.answers[2].text }}</label>
+                </div>
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer"> {{ activeQuestion.answers[3].text }}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="next()">Next</button>
+    <button class="btn btn-warning" type="button" ng-click="prev()">Previous</button>
+</div>
