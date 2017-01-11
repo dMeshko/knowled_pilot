@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Test your knowledge!</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="inline picker" ng-repeat="question in quiz" ng-class="{'answered': userChoices[$index], 'active': $index === activeIndex}" ng-click="loadQuestion($index)">
+                {{ $index + 1 }}
+            </div>
+            <div class="row text-center margin-top">
+                <a class="finish-attempt" ng-click="finishAttempt()"><i class="fa fa-arrow-right"></i> Finish quiz now! <i class="fa fa-arrow-left"></i></a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <h4>{{ activeQuestion.question }}</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer" ng-value="activeQuestion.answers[0]"> {{ activeQuestion.answers[0].text }}</label>
+                </div>
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer" ng-value="activeQuestion.answers[1]"> {{ activeQuestion.answers[1].text }}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer" ng-value="activeQuestion.answers[2]"> {{ activeQuestion.answers[2].text }}</label>
+                </div>
+                <div class="col-md-6">
+                    <label><input type="radio" name="answer" ng-model="selectedAnswer" ng-value="activeQuestion.answers[3]"> {{ activeQuestion.answers[3].text }}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn" type="button" ng-click="prev()"><i class="fa fa-arrow-left"></i> Previous</button>
+    <button class="btn" type="button" ng-click="next()">Next <i class="fa fa-arrow-right"></i></button>
+</div>

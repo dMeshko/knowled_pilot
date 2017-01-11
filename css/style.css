@@ -78,5 +78,23 @@ ul.hidden-list{
 
 .inline.picker:hover{
     cursor: pointer;
-    background: yellow;
+    background: #dddddd;
+}
+
+.inline.picker.active{
+    color: white;
+    background: red !important;
+}
+
+.inline.picker.answered{
+    background: #ffbc00;
+    color: black;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.finish-attempt:hover{
+    cursor: pointer;
 }

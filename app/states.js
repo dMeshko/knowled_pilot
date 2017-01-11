@@ -195,7 +195,6 @@ app.config([
             url: "/biology",
             views: {
                 "content@": {
-                    controller: "BiologyQuizController",
                     templateUrl: "./views/quiz/biology.html"
                 }
             }

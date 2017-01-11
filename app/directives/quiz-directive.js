@@ -13,12 +13,79 @@ app.directive("quiz", [
                         animation: true,
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
-                        templateUrl: './app/directives/quiz-directive.html',
-                        controller: $attributes.controllerName,
+                        templateUrl: './app/directives/quiz.html',
+                        controller: function ($scope, QuizDatabase, field, topic, maxQuestions){
+                            field = field || QuizDatabase.getRandomField();
+                            var questions = !!topic ? QuizDatabase.getSpecificTopic(field, topic) : QuizDatabase.getRandomTopic(field);
+                            maxQuestions = maxQuestions || 5; // try to get at most maxQuestions, if not specified - defaults to 5
+
+                            $scope.quiz = QuizDatabase.generateQuiz(questions, maxQuestions);
+                            $scope.userChoices = Array($scope.quiz.length).fill(undefined);
+
+                            $scope.activeIndex = 0;
+                            $scope.activeQuestion = $scope.quiz[$scope.activeIndex];
+                            $scope.selectedAnswer = {};
+                            $scope.loadQuestion = function (id){
+                                if ("text" in $scope.selectedAnswer){ //check if answer has been selected
+                                    $scope.userChoices[$scope.activeIndex] = $scope.selectedAnswer;
+                                }
+
+                                $scope.activeIndex = id;
+                                $scope.selectedAnswer = $scope.userChoices[$scope.activeIndex] || {};
+                                $scope.activeQuestion = $scope.quiz[$scope.activeIndex];
+                            };
+
+                            $scope.next = function (){
+                                if ("text" in $scope.selectedAnswer){ //check if answer has been selected
+                                    $scope.userChoices[$scope.activeIndex] = $scope.selectedAnswer;
+                                }
+
+                                $scope.activeIndex++;
+                                if ($scope.activeIndex == $scope.quiz.length)
+                                    $scope.activeIndex = 0;
+                                $scope.selectedAnswer = $scope.userChoices[$scope.activeIndex] || {};
+                                $scope.loadQuestion($scope.activeIndex);
+                            };
+
+                            $scope.prev = function (){
+                                if ("text" in $scope.selectedAnswer){ //check if answer has been selected
+                                    $scope.userChoices[$scope.activeIndex] = $scope.selectedAnswer;
+                                }
+
+                                $scope.activeIndex--;
+                                if ($scope.activeIndex == -1)
+                                    $scope.activeIndex = $scope.quiz.length - 1;
+                                $scope.selectedAnswer = $scope.userChoices[$scope.activeIndex] || {};
+                                $scope.loadQuestion($scope.activeIndex);
+                            };
+
+                            var correctAnswerPoints = 1, wrongAnswerPoints = -1;
+                            $scope.finishAttempt = function (){
+                                $scope.loadQuestion($scope.activeIndex); // mark the current questions as answered
+
+                                var points = 0;
+
+                                for (i = 0; i < $scope.userChoices.length; i++)
+                                    if (!!$scope.userChoices[i]) // check if question is answered
+                                        if ($scope.userChoices[i].correct) // check if questions is answered correctly
+                                            points += correctAnswerPoints;
+                                        else // the answer is wrong
+                                            points += wrongAnswerPoints;
+
+
+                                alert("You have earned: " + points);
+                            };
+                        },
                         size: "lg",
                         resolve: {
-                            quizTopic: function (){
-                                return $attributes.topic
+                            field: function (){
+                                return $attributes.field;
+                            },
+                            topic: function (){
+                                return $attributes.topic;
+                            },
+                            maxQuestions: function (){
+                                return $attributes.maxQuestions;
                             }
                         }
                     })

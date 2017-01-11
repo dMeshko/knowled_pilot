@@ -5,6 +5,115 @@ app.factory("QuizDatabase", function (){
     var factory = {};
 
     var questions = {
+        "life": {
+            "annie": [
+                {
+                    question: "Omileno jadenje na Annie?",
+                    answers: [
+                        {
+                            correct: true,
+                            text: "Sirenje"
+                        },
+                        {
+                            correct: false,
+                            text: "Pica"
+                        },
+                        {
+                            correct: false,
+                            text: "Pavlaka"
+                        },
+                        {
+                            correct: false,
+                            text: "Bop"
+                        }
+                    ]
+                },
+                {
+                    question: "Kolku godini ima Chelsea(kuchkata)?",
+                    answers: [
+                        {
+                            correct: false,
+                            text: "4"
+                        },
+                        {
+                            correct: true,
+                            text: "5"
+                        },
+                        {
+                            correct: false,
+                            text: "6"
+                        },
+                        {
+                            correct: false,
+                            text: "7"
+                        }
+                    ]
+                },
+                {
+                    question: "Kolku pati vo mesecot si ja cheshla kosata?",
+                    answers: [
+                        {
+                            correct: false,
+                            text: "1"
+                        },
+                        {
+                            correct: false,
+                            text: "2"
+                        },
+                        {
+                            correct: true,
+                            text: "3"
+                        },
+                        {
+                            correct: false,
+                            text: "4"
+                        }
+                    ]
+                },
+                {
+                    question: "Koja mandolina beshe?",
+                    answers: [
+                        {
+                            correct: false,
+                            text: "1"
+                        },
+                        {
+                            correct: true,
+                            text: "2"
+                        },
+                        {
+                            correct: false,
+                            text: "3"
+                        },
+                        {
+                            correct: false,
+                            text: "4"
+                        }
+                    ]
+                },
+                {
+                    question: "Za sho se zdruzhi so Lileto?",
+                    answers: [
+                        {
+                            correct: true,
+                            text: "Za inernetot"
+                        },
+                        {
+                            correct: false,
+                            text: "Za kucheto"
+                        },
+                        {
+                            correct: false,
+                            text: "Oti i beshe zhal deka ne gledashe"
+                        },
+                        {
+                            correct: false,
+                            text: "Za baklavite"
+                        }
+                    ]
+                }
+            ]
+        },
         "biology": {
             "basics": [
                 {
