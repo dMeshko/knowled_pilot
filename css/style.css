@@ -98,3 +98,7 @@ ul.hidden-list{
 .finish-attempt:hover{
     cursor: pointer;
 }
+
+.row.question-result{
+    padding: 10px;
+}

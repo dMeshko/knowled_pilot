@@ -14,7 +14,7 @@ app.directive("quiz", [
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
                         templateUrl: './app/directives/quiz.html',
-                        controller: function ($scope, QuizDatabase, field, topic, maxQuestions){
+                        controller: function ($scope, QuizDatabase, field, topic, maxQuestions, $uibModalInstance){
                             field = field || QuizDatabase.getRandomField();
                             var questions = !!topic ? QuizDatabase.getSpecificTopic(field, topic) : QuizDatabase.getRandomTopic(field);
                             maxQuestions = maxQuestions || 5; // try to get at most maxQuestions, if not specified - defaults to 5
@@ -59,6 +59,10 @@ app.directive("quiz", [
                                 $scope.loadQuestion($scope.activeIndex);
                             };
 
+                            $scope.close = function (){
+                                $uibModalInstance.close();
+                            };
+
                             var correctAnswerPoints = 1, wrongAnswerPoints = -1;
                             $scope.finishAttempt = function (){
                                 $scope.loadQuestion($scope.activeIndex); // mark the current questions as answered
@@ -72,8 +76,64 @@ app.directive("quiz", [
                                         else // the answer is wrong
                                             points += wrongAnswerPoints;
 
+                                $uibModalInstance.close(); // close the quiz modal
 
-                                alert("You have earned: " + points);
+                                // summon the results modal
+                                $uibModal.open({
+                                        animation: true,
+                                        ariaLabelledBy: 'modal-title',
+                                        ariaDescribedBy: 'modal-body',
+                                        templateUrl: './app/directives/quiz-results.html',
+                                        controller: function ($scope, $uibModalInstance, questions, answeredQuestions, points){
+                                            $scope.questions = questions;
+                                            $scope.answeredQuestions = answeredQuestions;
+                                            $scope.points = points;
+
+                                            $scope.answerResult = function (questionIndex){
+                                                var correctAnswer = $scope.getCorrectAnswer(questionIndex);
+                                                var chosenAnswer = $scope.answeredQuestions[questionIndex];
+
+                                                if (!chosenAnswer)
+                                                    return 0;
+
+                                                if (chosenAnswer.text === correctAnswer.text)
+                                                    return 1;
+
+                                                return -1;
+                                            };
+
+                                            $scope.getCorrectAnswer = function (questionIndex){
+                                                var correctAnswer = undefined;
+                                                angular.forEach($scope.questions[questionIndex].answers, function (value){
+                                                    if (value.correct){
+                                                        correctAnswer = value;
+                                                        return false; // break
+                                                    }
+                                                });
+
+                                                return correctAnswer;
+                                            };
+
+                                            $scope.close = function (){
+                                                $uibModalInstance.close();
+                                            };
+                                        },
+                                        size: "lg",
+                                        resolve: {
+                                            questions: function (){
+                                                return $scope.quiz;
+                                            },
+                                            answeredQuestions: function (){
+                                                return $scope.userChoices;
+                                            },
+                                            points: function (){
+                                                return points;
+                                            }
+                                        }
+                                });
+
+                                // reset values here for futures usage
+
                             };
                         },
                         size: "lg",

@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Quiz results</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div ng-repeat-start="question in questions" class="row question-result" ng-class="{'bg-warning': answerResult($index) === 0, 'bg-danger': answerResult($index) === -1, 'bg-success': answerResult($index) === 1}">
+        <h4>{{ ::($index + 1) }}. {{ ::question.question }}</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">Your answer: </div>
+                    <div class="col-md-8">{{ ::!!answeredQuestions[$index] ? answeredQuestions[$index].text : "Not answered " }}</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">Correct answer: </div>
+                    <div class="col-md-8">{{ ::getCorrectAnswer($index).text }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr ng-repeat-end />
+
+    <h3>Points scored: {{ ::points }}</h3>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" type="button" ng-click="close()"><i class="fa fa-times"></i> Close</button>
+</div>
