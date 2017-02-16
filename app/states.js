@@ -218,5 +218,13 @@ app.config([
             }
         });
 
-
+        $stateProvider.state("app.create", {
+            url: "create",
+            views: {
+                "content@": {
+                    controller: "ContentController",
+                    templateUrl: "./views/content/index.html"
+                }
+            }
+        });
     }]);

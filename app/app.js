@@ -3,5 +3,6 @@
  */
 var app = angular.module("knowledgePilot", [
     "ui.router",
-    "ui.bootstrap"
+    "ui.bootstrap",
+    'ui.tinymce'
 ]);
