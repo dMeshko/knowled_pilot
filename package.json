@@ -13,6 +13,7 @@
     "angular-ui-bootstrap": "^2.4.0",
     "angular-ui-router": "^0.3.2",
     "angular-ui-tinymce": "0.0.18",
+    "tinymce": "^4.5.3",
     "bootstrap": "^3.3.7",
     "bootswatch": "^3.3.7",
     "font-awesome": "^4.7.0",
