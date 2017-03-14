@@ -4,5 +4,6 @@
 var app = angular.module("knowledgePilot", [
     "ui.router",
     "ui.bootstrap",
-    'ui.tinymce'
+    'ui.tinymce',
+    "firebase"
 ]);

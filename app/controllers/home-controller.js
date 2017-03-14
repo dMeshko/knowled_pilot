@@ -1,7 +1,7 @@
 /**
  * Created by DarkoM on 13.12.2016.
  */
-app.controller("HomeController", ["$scope", function ($scope){
+app.controller("HomeController", ["$scope", "DataFactory", function ($scope, DataFactory){
 
     $scope.showLevel2P = false;
     $scope.showLevel2D = false;
@@ -9,6 +9,18 @@ app.controller("HomeController", ["$scope", function ($scope){
     $scope.showLevel3M = false;
     $scope.showLevel3D = false;
     $scope.showAngular2 = false;
+
+
+    var usersRef = DataFactory.users();
+    console.log(usersRef);
+    usersRef.once('value').then(function (snapshot){
+        console.log("snapshot", snapshot.val());
+    });
+
+    usersRef.on('child_added', function(data) {
+        console.log("on-add", data.key, data.val());
+    });
+
 
     $scope.toggleLevel2P = function () {
         $scope.showLevel2P = !$scope.showLevel2P;
