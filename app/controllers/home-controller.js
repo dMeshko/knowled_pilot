@@ -1,7 +1,7 @@
 /**
  * Created by DarkoM on 13.12.2016.
  */
-app.controller("HomeController", ["$scope", "DataFactory", function ($scope, DataFactory){
+app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", function ($scope, DataFactory, $rootScope){
 
     $scope.showLevel2P = false;
     $scope.showLevel2D = false;
@@ -19,6 +19,7 @@ app.controller("HomeController", ["$scope", "DataFactory", function ($scope, Dat
 
     usersRef.on('child_added', function(data) {
         console.log("on-add", data.key, data.val());
+        //alert("oy..." + data.val().username + " just joined the crew! :D");
     });
 
 

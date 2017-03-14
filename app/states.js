@@ -227,4 +227,24 @@ app.config([
                 }
             }
         });
+
+        $stateProvider.state("app.login", {
+            url: "login",
+            views: {
+                "content@": {
+                    controller: "HeaderController",
+                    templateUrl: "./views/login.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.signup", {
+            url: "signup",
+            views: {
+                "content@": {
+                    controller: "HeaderController",
+                    templateUrl: "./views/signup.html"
+                }
+            }
+        });
     }]);

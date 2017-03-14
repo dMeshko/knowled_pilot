@@ -43,7 +43,10 @@
                         <li ui-sref-active="active"><a  ui-sref="app.quiz.math">Math</a></li>
                     </ul>
                 </li>
-                <li ui-sref-active="active"><a ui-sref="app.create">New Topic</a></li>
+                <li ng-if="!!currentUser" ui-sref-active="active"><a ui-sref="app.create">New Topic</a></li>
+                <li ng-if="!!currentUser" ui-sref-active="active"><a ng-click="logout()">Logout</a></li>
+                <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.login">Login</a></li>
+                <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.signup">Sign up</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
