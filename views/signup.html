@@ -1,16 +1,65 @@
-<form ng-init="initSignupForm()">
-<label>Name: </label>
-<input type="text" ng-model="signupModel.name">
-<label>Surname: </label>
-<input type="text" ng-model="signupModel.surname">
-<label>Birth date: </label>
-<input type="date" ng-model="signupModel.birthDate">
-<label>Email: </label>
-<input type="email" ng-model="signupModel.email">
-<label>Username: </label>
-<input type="text" ng-model="signupModel.username">
-<label>Password: </label>
-<input type="password" ng-model="signupModel.password">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-9" style="padding-top: 20px;">
+            <h1>Sign up</h1>
+        </div>
+    </div>
 
-<button type="submit" ng-click="signup()">Sign Up</button>
-</form>
+    <form ng-init="initSignupForm()" style="padding-bottom: 8%; padding-top: 5%">
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Name</label>
+            <div class="col-sm-5">
+                <input type="text" id="name" ng-model="signupModel.name" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="surname"
+                   class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Surname</label>
+            <div class="col-sm-5">
+                <input type="text" id="surname" ng-model="signupModel.surname" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="username"
+                   class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Username</label>
+            <div class="col-sm-5">
+                <input type="text" id="username" ng-model="signupModel.username" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email"
+                   class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Email</label>
+            <div class="col-sm-5">
+                <input type="email" id="email" ng-model="signupModel.email" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="date" class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Date of
+                birth</label>
+            <div class="col-sm-5">
+                <input type="date" id="date" ng-model="signupModel.dateOfBirth" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password"
+                   class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Password</label>
+            <div class="col-sm-5">
+                <input type="password" id="password" ng-model="signupModel.password"
+                       class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-offset-4 col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-click="signup()"><i class="fa fa-book"
+                                                                                     aria-hidden="true"></i> Sign up
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

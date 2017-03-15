@@ -1,9 +1,29 @@
-<form ng-init="initLoginForm()">
-    <label>email</label>
-    <input type="text" ng-model="loginModel.email">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-9" style="padding-top: 20px;">
+            <h1>Log in</h1>
+        </div>
+    </div>
 
-    <label>password</label>
-    <input type="password" ng-model="loginModel.password">
+    <form ng-init="initLoginForm()" style="padding-bottom: 8%; padding-top: 5%">
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Email</label>
+            <div class="col-sm-5">
+                <input type="email" id="email" ng-model="loginModel.email" class="form-control form-control-lg">
+            </div>
+        </div>
 
-    <button type="submit" ng-click="login()">Log in</button>
-</form>
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 col-sm-offset-2 col-form-label col-form-label-lg text-right">Password</label>
+            <div class="col-sm-5">
+                <input type="password" id="password" ng-model="loginModel.password" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-offset-4 col-sm-10">
+                <button type="submit" class="btn btn-primary" ng-click="login()"><i class="fa fa-book" aria-hidden="true"></i> Log in</button>
+            </div>
+        </div>
+    </form>
+</div>

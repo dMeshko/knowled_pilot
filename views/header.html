@@ -33,7 +33,7 @@
                         <li ui-sref-active="active"><a ui-sref="app.learn.math">Math</a></li>
                     </ul>
                 </li>
-                <li ui-sref-active="active" class="dropdown">
+                <li ui-sref-active="active" class="dropdown" style="padding-right: 10px">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Quiz <span class="caret"></span>
                     </a>
@@ -44,9 +44,9 @@
                     </ul>
                 </li>
                 <li ng-if="!!currentUser" ui-sref-active="active"><a ui-sref="app.create">New Topic</a></li>
-                <li ng-if="!!currentUser" ui-sref-active="active"><a ng-click="logout()">Logout</a></li>
-                <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.login">Login</a></li>
-                <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.signup">Sign up</a></li>
+                <li ng-if="!!currentUser" ui-sref-active="active"><a ng-click="logout()" style="color: #eb6864">Logout</a></li>
+                <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.login" style="color: #eb6864">Login</a></li>
+                <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.signup" style="color: #eb6864">Sign up</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
