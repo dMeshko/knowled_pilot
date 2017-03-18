@@ -1,7 +1,7 @@
 /**
  * Created by DarkoM on 13.12.2016.
  */
-app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", function ($scope, DataFactory, $rootScope){
+app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", "Notification", "$timeout", function ($scope, DataFactory, $rootScope, Notification, $timeout){
 
     $scope.showLevel2P = false;
     $scope.showLevel2D = false;
@@ -11,17 +11,31 @@ app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", functio
     $scope.showAngular2 = false;
 
 
-    var usersRef = DataFactory.users();
-    console.log(usersRef);
-    usersRef.once('value').then(function (snapshot){
-        console.log("snapshot", snapshot.val());
+    var postsRef = DataFactory.posts(), initialLoad = true;
+    postsRef.once("value", function(data) {
+        if (!!$scope.currentUser){
+            initialLoad = false;
+        }
     });
 
-    usersRef.on('child_added', function(data) {
-        console.log("on-add", data.key, data.val());
-        //alert("oy..." + data.val().username + " just joined the crew! :D");
+    postsRef.on('child_added', function(data) { //child_added
+        if (!!$scope.currentUser){
+            if (!initialLoad) return;
+            var results = data.val();
+            if ($scope.currentUser.id !== results.userId){
+                DataFactory.getUser(results.userId).once("value").then(function (snapshot){
+                    var user = snapshot.val();
+                    DataFactory.getTopic(results.fieldId, results.topicId).once("value").then(function (snapshot){
+                        var field = snapshot.val();
+                        Notification.success({
+                            message: "New posts was added by " + user.username + " in " + field.name + ", named as: " + results.title + ".  Check it out!! <i class='fa fa-smile-o' aria-hidden='true'></i>",
+                            delay: 10000
+                        });
+                    });
+                });
+            }
+        }
     });
-
 
     $scope.toggleLevel2P = function () {
         $scope.showLevel2P = !$scope.showLevel2P;

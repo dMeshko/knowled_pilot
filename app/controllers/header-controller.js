@@ -5,6 +5,20 @@ app.controller("HeaderController",  [
     "$scope", "DataFactory", "$state", "$rootScope",
 
     function ($scope, DataFactory, $state, $rootScope){
+        $scope.searchPhrase = "";
+        $scope.search = function (){
+            var postsRef = DataFactory.posts();
+            postsRef.orderByChild("title").equalTo($scope.searchPhrase).once("value").then(function (snapshot){
+                alert("otvori ja konzolata!!");
+                var results = snapshot.val();
+                if (results === null)
+                    console.log("search results:", "that item is not found.  NOTE: it has to be the same name, this can be optimized with 'contains'");
+                else
+                    console.log("search results:", results);
+            });
+        };
+
+
         $scope.initLoginForm = function(){
             $scope.loginModel = {};
         };
@@ -16,14 +30,18 @@ app.controller("HeaderController",  [
         $scope.login = function(){
             var users = DataFactory.users();
             users.once('value').then(function(snapshot){
-                var results = snapshot.val();
-                var success = results.filter(function(x){
-                    return(x.email === $scope.loginModel.email && x.password === $scope.loginModel.password)
-                });
+                var results = snapshot.val(), success;
+                for (key in results){
+                    var x = results[key];
+                    if (x.email === $scope.loginModel.email && x.password === $scope.loginModel.password){
+                        success = angular.extend(x, { id: key });
+                        break;
+                    }
+                }
 
-                if(success.length > 0) {
+                if(!!success) {
                     $state.go("app.home");
-                    $rootScope.currentUser = success[0];
+                    $rootScope.currentUser = success;
                 }
                 else
                     alert('error');

@@ -5,33 +5,41 @@
         </div>
     </div>
 
-    <form style="padding: 30px 0">
+    <form>
         <div class="form-group row">
             <label for="topicTitle" class="col-sm-2 col-form-label col-form-label-lg text-right">Title</label>
             <div class="col-sm-10">
-                <input type="text" id="topicTitle" class="form-control form-control-lg">
+                <input type="text" ng-model="model.title" id="topicTitle" class="form-control form-control-lg">
             </div>
         </div>
         <div class="form-group row">
             <label for="topicContent" class="col-sm-2 col-form-label text-right">Content</label>
             <div class="col-sm-10">
-                <textarea ui-tinymce="tinymceOptions" ng-model="content" id="topicContent"></textarea>
+                <textarea ui-tinymce="tinymceOptions" ng-model="model.content" id="topicContent"></textarea>
             </div>
         </div>
         <div class="form-group row">
-            <label for="topicCategory" class="col-sm-2 col-form-label text-right">Category</label>
+            <label for="fieldCategory" class="col-sm-2 col-form-label text-right">Field</label>
             <div class="col-sm-10">
-                <select id="topicCategory" class="form-control">
-                    <option>Biology</option>
-                    <option>Mathematics</option>
-                    <option>IT</option>
+                <select ng-model="model.fieldId" ng-change="loadTopics()" id="fieldCategory" class="form-control">
+                    <option ng-repeat="field in fields" value="{{ field.id }}">{{ field.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="topicCategory" class="col-sm-2 col-form-label text-right">Topic</label>
+            <div class="col-sm-10">
+                <select ng-disabled="!model.fieldId" ng-model="model.topicId" id="topicCategory" class="form-control">
+                    <option ng-repeat="topic in topics" value="{{ topic.id }}">{{ topic.name }}</option>
                 </select>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-primary"><i class="fa fa-paper-plane"></i> Post</button>
+                <button class="btn btn-primary" ng-click="savePost()"><i class="fa fa-paper-plane"></i> Post</button>
             </div>
         </div>
     </form>
 </div>
+
+<pre>{{model | json}}</pre>
