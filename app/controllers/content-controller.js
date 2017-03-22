@@ -2,8 +2,17 @@
  * Created by DarkoM on 16.2.2017.
  */
 app.controller("ContentController", [
-    "$scope", "DataFactory", "Notification", "$state",
-    function ($scope, DataFactory, Notification, $state){
+    "$scope", "DataFactory", "Notification", "$state", "$cookies", "$rootScope",
+    function ($scope, DataFactory, Notification, $state, $cookies, $rootScope){
+        if (!$rootScope.currentUser)
+        {
+            var user = JSON.parse($cookies.get("currentUser") || null);
+            if (!!user)
+                $rootScope.currentUser = user;
+            else
+                $state.go("app.login");
+        }
+
         $scope.model = {
             title: "",
             content: "",

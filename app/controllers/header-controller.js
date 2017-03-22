@@ -2,9 +2,8 @@
  * Created by DarkoM on 13.12.2016.
  */
 app.controller("HeaderController",  [
-    "$scope", "DataFactory", "$state", "$rootScope",
-
-    function ($scope, DataFactory, $state, $rootScope){
+    "$scope", "DataFactory", "$state", "$rootScope", "$cookies",
+    function ($scope, DataFactory, $state, $rootScope, $cookies){
         $scope.searchPhrase = "";
         $scope.search = function (){
             var postsRef = DataFactory.posts();
@@ -42,6 +41,8 @@ app.controller("HeaderController",  [
                 if(!!success) {
                     $state.go("app.home");
                     $rootScope.currentUser = success;
+                    $cookies.put("currentUser", JSON.stringify(success));
+                    //console.log(JSON.parse($cookies.get("currentUser")));
                 }
                 else
                     alert('error');
@@ -54,7 +55,18 @@ app.controller("HeaderController",  [
         
         $scope.logout = function () {
             $rootScope.currentUser = null;
+            $cookies.remove("currentUser");
             $state.go("app.login");
-        }
+        };
+
+        // menu
+        $scope.fields = [];
+        DataFactory.fields().once("value").then(function (snapshot){
+            var results = snapshot.val();
+            $scope.fields = Object.keys(results).map(function (x){
+                return angular.extend(results[x], { id: x });
+            });
+            $scope.$apply();
+        });
     }
 ]);

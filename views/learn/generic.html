@@ -1,0 +1,14 @@
+<div class = "container-fluid" ng-controller="HomeController">
+    <div class = "row" style="margin-bottom: 30px;">
+        <div ui-view="left" class = "col-md-3">
+            <ul class="nav nav-pills nav-stacked" style="padding-top: 30px;">
+                <li ng-repeat="(id, topic) in currentField.topics" id="{{ id }}"><a ui-sref="app.learn.generic.topic({ topicId: id })">{{ ::topic.name }}</a></li>
+
+                <li style="margin-top: 15px; border: 1px solid #eb6864"><a href="#"><i class="fa fa-book"></i> Test your knowledge</a></li>
+            </ul>
+        </div>
+        <div ui-view="main" class = "col-md-9 content">
+            <div ng-bind-html="currentField.content"></div>
+        </div>
+    </div>
+</div>

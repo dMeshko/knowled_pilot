@@ -247,4 +247,59 @@ app.config([
                 }
             }
         });
+
+
+        // automated
+        $stateProvider.state("app.learn.generic", { // fields showcase
+            url: "/generic/:fieldId",
+            views: {
+                "content@": {
+                    controller: function ($scope, $stateParams, DataFactory){
+                        var fieldId = $stateParams.fieldId;
+
+                        $scope.currentField = {};
+                        DataFactory.getField(fieldId).once("value").then(function (snapshot){
+                            $scope.currentField = snapshot.val();
+                            $scope.currentField.id = snapshot.key;
+                            $scope.$apply();
+                        });
+
+                    },
+                    templateUrl: "./views/learn/generic.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.generic.topic", { // topics showcase
+            url: "/:topicId",
+            views: {
+                "main@app.learn.generic": {
+                    controller: function ($scope, $stateParams, DataFactory){
+                        $scope.topicId = $stateParams.topicId;
+                        $scope.currentTopic = !!$scope.$parent.$parent.currentField.topics ? $scope.$parent.$parent.currentField.topics[$scope.topicId] : undefined;
+                        if (!$scope.currentTopic){
+                            DataFactory.getTopic($stateParams.fieldId, $scope.topicId).once("value").then(function (snapshot){
+                                var results = snapshot.val();
+                                $scope.currentTopic = results;
+                                $scope.currentTopic.id = snapshot.key;
+                                $scope.$apply();
+                            });
+                        }
+                    },
+                    templateUrl: "./views/learn/generic-topic.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.learn.generic.topic.post", { // posts showcase
+            url: "/:postId",
+            views: {
+                "content@": {
+                    controller: function ($scope, $stateParams){
+                        $scope.postId = $stateParams.postId;
+                    },
+                    templateUrl: "./views/learn/generic-post.html"
+                }
+            }
+        });
     }]);

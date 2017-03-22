@@ -28,9 +28,7 @@
                         Learn <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="app.learn.biology">Biology</a></li>
-                        <li ui-sref-active="active"><a ui-sref="app.learn.it">IT</a></li>
-                        <li ui-sref-active="active"><a ui-sref="app.learn.math">Math</a></li>
+                        <li ng-repeat="field in fields" ui-sref-active="active"><a ui-sref="app.learn.generic({ fieldId: field.id })">{{ ::field.name }}</a></li>
                     </ul>
                 </li>
                 <li ui-sref-active="active" class="dropdown" style="padding-right: 10px">
@@ -44,9 +42,17 @@
                     </ul>
                 </li>
                 <li ng-if="!!currentUser" ui-sref-active="active"><a ui-sref="app.create">New Topic</a></li>
-                <li ng-if="!!currentUser" ui-sref-active="active"><a ng-click="logout()" style="color: #eb6864">Logout</a></li>
                 <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.login" style="color: #eb6864">Login</a></li>
                 <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.signup" style="color: #eb6864">Sign up</a></li>
+                <li ng-if="!!currentUser" ui-sref-active="active" class="dropdown" style="padding-right: 10px">
+                    <a style="color:red;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ ::currentUser.username }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ng-click="logout()">Logout</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.quiz.it">Quiz results</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->

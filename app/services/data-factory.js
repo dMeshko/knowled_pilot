@@ -8,6 +8,10 @@ app.factory("DataFactory", ["FirebaseFactory", function (FirebaseFactory){
         return FirebaseFactory.ref("/fields/");
     };
 
+    factory.getField = function (fieldId){
+        return FirebaseFactory.ref("/fields/" + fieldId);
+    };
+
     factory.topics = function (fieldId){
         return FirebaseFactory.ref("/fields/" + fieldId + "/topics");
     };

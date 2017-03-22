@@ -6,5 +6,7 @@ var app = angular.module("knowledgePilot", [
     "ui.bootstrap",
     'ui.tinymce',
     "firebase",
-    "ui-notification"
+    "ui-notification",
+    "ngSanitize",
+    "ngCookies"
 ]);

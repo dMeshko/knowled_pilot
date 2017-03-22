@@ -1,7 +1,15 @@
 /**
  * Created by DarkoM on 13.12.2016.
  */
-app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", "Notification", "$timeout", function ($scope, DataFactory, $rootScope, Notification, $timeout){
+app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", "Notification", "$cookies", "$state", function ($scope, DataFactory, $rootScope, Notification, $cookies, $state){
+    if (!$rootScope.currentUser)
+    {
+        var user = JSON.parse($cookies.get("currentUser") || null);
+        if (!!user)
+            $rootScope.currentUser = user;
+        else
+            $state.go("app.login");
+    }
 
     $scope.showLevel2P = false;
     $scope.showLevel2D = false;
