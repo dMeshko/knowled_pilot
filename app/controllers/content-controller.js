@@ -58,5 +58,29 @@ app.controller("ContentController", [
                 $state.go("app.home");
             });
         };
+
+        // field
+        $scope.field = {};
+
+        $scope.saveField = function(){
+            DataFactory.fields().push($scope.field).then(function(snapshot){
+                Notification.success("Field added");
+                $rootScope.$broadcast("reloadData");
+                $state.go("app.home");
+            })
+        };
+
+        // topic
+        $scope.topic = [];
+
+        $scope.saveTopic = function(){
+            var fieldId = $scope.topic.fieldId;
+            delete $scope.topic.fieldId;
+            DataFactory.topics(fieldId).push($scope.topic).then(function(snapshot){
+                Notification.success("Topic added");
+                $rootScope.$broadcast("reloadData");
+                $state.go("app.home");
+            })
+        }
     }
 ]);

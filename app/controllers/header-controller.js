@@ -60,13 +60,21 @@ app.controller("HeaderController",  [
         };
 
         // menu
-        $scope.fields = [];
-        DataFactory.fields().once("value").then(function (snapshot){
-            var results = snapshot.val();
-            $scope.fields = Object.keys(results).map(function (x){
-                return angular.extend(results[x], { id: x });
+        var loadMenu = function (){
+            $scope.fields = [];
+            DataFactory.fields().once("value").then(function (snapshot){
+                var results = snapshot.val();
+                $scope.fields = Object.keys(results).map(function (x){
+                    return angular.extend(results[x], { id: x });
+                });
+                $scope.$apply();
             });
-            $scope.$apply();
+        };
+        loadMenu();
+
+        $scope.$on("reloadData", function (){
+            loadMenu();
         });
+
     }
 ]);

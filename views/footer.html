@@ -1,69 +1,12 @@
 <div class="container-fluid  bg-primary" style="min-height: 250px">
     <div class="row">
         <div class="col-md-12" style="padding: 20px 0">
-            <div class="col-md-offset-1 col-md-2">
-                <h4>Biology</h4>
+            <div ng-repeat="field in fields" class="col-md-offset-1 col-md-2">
+                <h4 style="cursor: pointer;" ui-sref="app.learn.generic({ fieldId: field.id })">{{ ::field.name }}</h4>
                 <ul class="list list-unstyled">
-                    <li>
-                        <a ui-sref="app.learn.biology.basics">Biology basics</a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.learn.biology.diss">Biology world dissections</a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.learn.biology.evolution">Bilogical evolution</a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.learn.biology.pyramid">Pyramid structure of life</a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.learn.biology.kingdoms">Kingdoms of life</a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.learn.biology.taxonomy">Taxonomy</a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.learn.biology.diss">Cell anatomy</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-2">
-                <h4>IT</h4>
-                <ul class="list list-unstyled">
-                    <li>
-                       <a ui-sref="app.learn.it.frontend">Front-End Programming</a>
-                    </li>
-                    <li>
-                       <a href="#">Back-End Programming</a>
-                    </li>
-                    <li>
-                        <a href="#">Android Programming</a>
-                    </li>
-                    <li>
-                        <a href="#">IOS Programming</a>
-                    </li>
-                    <li>
-                        <a href="#">Photoshop</a>
-                    </li>
-                    <li>
-                        <a href="#">Adobe Illustrator</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-2">
-                <h4>Math</h4>
-                <ul class="list list-unstyled">
-                    <li>
-                        <a ui-sref="app.learn.math.algebra">Algebra</a>
-                    </li>
-                    <li>
-                        <a href="#">Calculus</a>
-                    </li>
-                    <li>
-                        <a href="#">Discrete Math</a>
-                    </li>
-                    <li>
-                        <a href="#">Probability and Statistics</a>
+                    <li ng-repeat="topic in field.topics">
+                        <a ui-sref="app.learn.generic.topic({ fieldId: field.id, topicId: topic.id })">{{ ::topic.name
+                            }}</a>
                     </li>
                 </ul>
             </div>

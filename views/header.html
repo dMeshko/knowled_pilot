@@ -31,7 +31,7 @@
                         <li ng-repeat="field in fields" ui-sref-active="active"><a ui-sref="app.learn.generic({ fieldId: field.id })">{{ ::field.name }}</a></li>
                     </ul>
                 </li>
-                <li ui-sref-active="active" class="dropdown" style="padding-right: 10px">
+                <li ng-if="!!currentUser" ui-sref-active="active" class="dropdown" style="padding-right: 10px">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Quiz <span class="caret"></span>
                     </a>
@@ -41,7 +41,16 @@
                         <li ui-sref-active="active"><a  ui-sref="app.quiz.math">Math</a></li>
                     </ul>
                 </li>
-                <li ng-if="!!currentUser" ui-sref-active="active"><a ui-sref="app.create">New Topic</a></li>
+                <li ng-if="!!currentUser" ui-sref-active="active" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
+                        Create <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="app.createField">New Field</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.createTopic">New Topic</a></li>
+                        <li ui-sref-active="active"><a ui-sref="app.createPost">New Post</a></li>
+                    </ul>
+                </li>
                 <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.login" style="color: #eb6864">Login</a></li>
                 <li ng-if="!currentUser" ui-sref-active="active"><a ui-sref="app.signup" style="color: #eb6864">Sign up</a></li>
                 <li ng-if="!!currentUser" ui-sref-active="active" class="dropdown" style="padding-right: 10px">
@@ -49,8 +58,8 @@
                         {{ ::currentUser.username }} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ng-click="logout()">Logout</a></li>
                         <li ui-sref-active="active"><a ui-sref="app.quiz.it">Quiz results</a></li>
+                        <li ui-sref-active="active"><a ng-click="logout()">Logout</a></li>
                     </ul>
                 </li>
             </ul>

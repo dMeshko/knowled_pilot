@@ -218,12 +218,32 @@ app.config([
             }
         });
 
-        $stateProvider.state("app.create", {
-            url: "create",
+        $stateProvider.state("app.createField", {
+            url: "/createField",
             views: {
                 "content@": {
                     controller: "ContentController",
-                    templateUrl: "./views/content/index.html"
+                    templateUrl: "./views/content/create-field.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.createTopic", {
+            url: "/createTopic",
+            views: {
+                "content@": {
+                    controller: "ContentController",
+                    templateUrl: "./views/content/create-topic.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.createPost", {
+            url: "/createPost",
+            views: {
+                "content@": {
+                    controller: "ContentController",
+                    templateUrl: "./views/content/create-post.html"
                 }
             }
         });

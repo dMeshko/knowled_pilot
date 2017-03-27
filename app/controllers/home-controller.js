@@ -8,7 +8,10 @@ app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", "Notifi
         if (!!user)
             $rootScope.currentUser = user;
         else
-            $state.go("app.login");
+        {
+            if ($state.current.name === "app.create" || $state.current.name === "app.quiz")
+                $state.go("app.login");
+        }
     }
 
     $scope.showLevel2P = false;
