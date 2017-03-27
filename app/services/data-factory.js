@@ -24,6 +24,10 @@ app.factory("DataFactory", ["FirebaseFactory", function (FirebaseFactory){
         return FirebaseFactory.ref("/posts/");
     };
 
+    factory.getPost = function(postId){
+        return FirebaseFactory.ref("/posts/" + postId);
+    };
+
     factory.questions = function (){
         return FirebaseFactory.ref("/questions/");
     };

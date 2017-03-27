@@ -295,16 +295,21 @@ app.config([
             views: {
                 "main@app.learn.generic": {
                     controller: function ($scope, $stateParams, DataFactory){
+                        $scope.posts = [];
+                        var posts = DataFactory.posts();
+
+                        $scope.fieldId = $stateParams.fieldId;
                         $scope.topicId = $stateParams.topicId;
-                        $scope.currentTopic = !!$scope.$parent.$parent.currentField.topics ? $scope.$parent.$parent.currentField.topics[$scope.topicId] : undefined;
-                        if (!$scope.currentTopic){
-                            DataFactory.getTopic($stateParams.fieldId, $scope.topicId).once("value").then(function (snapshot){
-                                var results = snapshot.val();
-                                $scope.currentTopic = results;
-                                $scope.currentTopic.id = snapshot.key;
+
+                        posts.orderByChild("topicId").equalTo($stateParams.topicId).once("value").then(function(snapshot){
+                            var results = snapshot.val();
+                            if(results) {
+                                Object.keys(results).map(function (key) {
+                                    $scope.posts.push(angular.extend(results[key], {id: key}));
+                                });
                                 $scope.$apply();
-                            });
-                        }
+                            }
+                        })
                     },
                     templateUrl: "./views/learn/generic-topic.html"
                 }
@@ -314,9 +319,15 @@ app.config([
         $stateProvider.state("app.learn.generic.topic.post", { // posts showcase
             url: "/:postId",
             views: {
-                "content@": {
-                    controller: function ($scope, $stateParams){
+                "main@app.learn.generic": {
+                    controller: function ($scope, $stateParams, DataFactory){
                         $scope.postId = $stateParams.postId;
+                        $scope.post = {};
+
+                        DataFactory.getPost($scope.postId).once("value").then(function(snapshot){
+                            $scope.post = snapshot.val();
+                            $scope.$apply();
+                        });
                     },
                     templateUrl: "./views/learn/generic-post.html"
                 }
