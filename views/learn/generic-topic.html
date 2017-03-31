@@ -1,12 +1,15 @@
 
     <div class="row" style="margin-top: 15px;">
         <div ng-repeat="post in posts" class="col-lg-12 text-center quiz">
-            <a href="#">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <a ui-sref="app.learn.generic.topic.post({ fieldId: fieldId, topicId: topicId, postId: post.id })"><h3>{{ post.title }}</h3></a>
+                        <div class="col-sm-2 col-xs-4">
+                            <img src="./img/book.png" class="img-responsive thumb">
+                        </div>
+                        <div class="col-sm-10 col-xs-8">
+                            <a ui-sref="app.learn.generic.topic.post({ fieldId: fieldId, topicId: topicId, postId: post.id })"><h3>{{ post.title }}</h3></a>
+                        </div>
                     </div>
                 </div>
-            </a>
         </div>
     </div>

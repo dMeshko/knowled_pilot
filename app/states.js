@@ -323,11 +323,31 @@ app.config([
                     controller: function ($scope, $stateParams, DataFactory){
                         $scope.postId = $stateParams.postId;
                         $scope.post = {};
+                        $scope.nextPost = {};
+                        $scope.lastKey = "";
 
                         DataFactory.getPost($scope.postId).once("value").then(function(snapshot){
                             $scope.post = snapshot.val();
+                            $scope.lastKey = snapshot.key;
                             $scope.$apply();
+                            getNextPost();
                         });
+
+                        function getNextPost() {
+                            DataFactory.posts().orderByKey().startAt($scope.lastKey).limitToFirst(2).once("value").then(function (snapshot) {
+                                var result = snapshot.val();
+                                var posts = [];
+
+                                Object.keys(result).map(function(key){
+                                    posts.push(angular.extend(result[key], {id: key}));
+                                });
+
+                                $scope.nextPost = posts[1];
+                                $scope.$apply();
+                            });
+                        }
+
+
                     },
                     templateUrl: "./views/learn/generic-post.html"
                 }
