@@ -8,12 +8,14 @@ app.controller("HeaderController",  [
         $scope.search = function (){
             var postsRef = DataFactory.posts();
             postsRef.orderByChild("title").equalTo($scope.searchPhrase).once("value").then(function (snapshot){
-                alert("otvori ja konzolata!!");
                 var results = snapshot.val();
                 if (results === null)
                     console.log("search results:", "that item is not found.  NOTE: it has to be the same name, this can be optimized with 'contains'");
-                else
-                    console.log("search results:", results);
+                else {
+                    for(key in results){
+                        $state.go("app.learn.generic.topic.post", {postId: key, topicId: results[key].topicId, fieldId: results[key].fieldId});
+                    }
+                }
             });
         };
 
