@@ -2,5 +2,6 @@
 <p ng-bind-html="post.content"></p>
 <div class="col-md-12">
     <hr>
+    <a ng-show="previousPost" ui-sref="app.learn.generic.topic.post({ fieldId: nextPost.fieldId, topicId: nextPost.topicId, postId: previousPost.id })" class="pull-left next"><i class="fa fa-arrow-left" aria-hidden="true"></i> {{ previousPost.title }}</a>
     <a ng-show="nextPost" ui-sref="app.learn.generic.topic.post({ fieldId: nextPost.fieldId, topicId: nextPost.topicId, postId: nextPost.id })" class="pull-right next">{{ nextPost.title }} <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>

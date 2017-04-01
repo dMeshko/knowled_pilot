@@ -324,6 +324,7 @@ app.config([
                         $scope.postId = $stateParams.postId;
                         $scope.post = {};
                         $scope.nextPost = {};
+                        $scope.previousPost = {};
                         $scope.lastKey = "";
 
                         DataFactory.getPost($scope.postId).once("value").then(function(snapshot){
@@ -331,6 +332,7 @@ app.config([
                             $scope.lastKey = snapshot.key;
                             $scope.$apply();
                             getNextPost();
+                            getPreviousPost();
                         });
 
                         function getNextPost() {
@@ -347,6 +349,19 @@ app.config([
                             });
                         }
 
+                        function getPreviousPost() {
+                            DataFactory.posts().orderByKey().endAt($scope.lastKey).once("value").then(function (snapshot) {
+                               var result = snapshot.val();
+                                var posts = [];
+
+                                Object.keys(result).map(function(key) {
+                                    posts.push(angular.extend(result[key], {id: key}));
+                                });
+
+                                $scope.previousPost = posts[posts.length - 2];
+                                $scope.$apply();
+                            });
+                        }
 
                     },
                     templateUrl: "./views/learn/generic-post.html"
