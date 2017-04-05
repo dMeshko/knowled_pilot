@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10">
+            <h1>Add a question</h1>
+        </div>
+    </div>
+
+    <form>
+        <div class="form-group row">
+            <label for="fieldCategory" class="col-sm-2 col-form-label text-right">Field</label>
+            <div class="col-sm-10">
+                <select ng-model="model.fieldId" ng-change="loadTopics()" id="fieldCategory" class="form-control">
+                    <option ng-repeat="field in fields" value="{{ field.id }}">{{ field.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="topicCategory" class="col-sm-2 col-form-label text-right">Topic</label>
+            <div class="col-sm-10">
+                <select ng-disabled="!model.fieldId" ng-change="loadPosts()" ng-model="model.topicId" id="topicCategory" class="form-control">
+                    <option ng-repeat="topic in topics" value="{{ topic.id }}">{{ topic.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="post" class="col-sm-2 col-form-label text-right">Post</label>
+            <div class="col-sm-10">
+                <select ng-disabled="!model.topicId" ng-model="model.postId" id="post" class="form-control">
+                    <option ng-repeat="post in posts" value="{{ post.id }}">{{ post.title }}</option>
+                </select>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group row">
+            <label for="question" class="col-sm-2 col-form-label col-form-label-lg text-right">Question: </label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="model.question" id="question" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="input-group col-md-10 col-md-offset-2 margin-top">
+            <span class="input-group-addon">
+                <input type="radio" value="0" ng-model="correctIndex" ng-change="updateCorrectAnswerValue()" name="correct">
+            </span>
+            <input type="text" ng-model="answers[0].content" class="form-control">
+        </div>
+
+        <div class="input-group col-md-10 col-md-offset-2 margin-top">
+            <span class="input-group-addon">
+                <input type="radio" value="1" ng-model="correctIndex" ng-change="updateCorrectAnswerValue()" name="correct">
+            </span>
+            <input type="text" ng-model="answers[1].content" class="form-control">
+        </div>
+
+        <div class="input-group col-md-10 col-md-offset-2 margin-top">
+            <span class="input-group-addon">
+                <input type="radio" value="2" ng-model="correctIndex" ng-change="updateCorrectAnswerValue()" name="correct">
+            </span>
+            <input type="text" ng-model="answers[2].content" class="form-control">
+        </div>
+
+        <div class="input-group col-md-10 col-md-offset-2 margin-top">
+            <span class="input-group-addon">
+                <input type="radio" value="3" ng-model="correctIndex" ng-change="updateCorrectAnswerValue()" name="correct">
+            </span>
+            <input type="text" ng-model="answers[3].content" class="form-control">
+        </div>
+
+        <div class="form-group row margin-top">
+            <div class="col-sm-offset-4 col-sm-4">
+                <button class="btn btn-primary btn-block" ng-click="saveQuestion()"><i class="fa fa-paper-plane"></i> Post</button>
+            </div>
+        </div>
+    </form>
+</div>

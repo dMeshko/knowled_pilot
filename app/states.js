@@ -219,7 +219,7 @@ app.config([
         });
 
         $stateProvider.state("app.createField", {
-            url: "/createField",
+            url: "createField",
             views: {
                 "content@": {
                     controller: "ContentController",
@@ -229,7 +229,7 @@ app.config([
         });
 
         $stateProvider.state("app.createTopic", {
-            url: "/createTopic",
+            url: "createTopic",
             views: {
                 "content@": {
                     controller: "ContentController",
@@ -239,7 +239,7 @@ app.config([
         });
 
         $stateProvider.state("app.createPost", {
-            url: "/createPost",
+            url: "createPost",
             views: {
                 "content@": {
                     controller: "ContentController",
@@ -365,6 +365,97 @@ app.config([
 
                     },
                     templateUrl: "./views/learn/generic-post.html"
+                }
+            }
+        });
+
+        $stateProvider.state("app.addQuestion", {
+            url: "addQuestion",
+            views: {
+                "content@": {
+                    templateUrl: "./views/quiz/new-question.html",
+                    controller: function ($scope, DataFactory, Notification){
+                        $scope.model = {
+                            fieldId: null,
+                            topicId: null,
+                            postId: null,
+                            question: ""
+                        };
+
+                        $scope.answers = [];
+                        $scope.correctIndex = 0;
+
+                        $scope.updateCorrectAnswerValue = function (){
+                            for (var i = 0; i < $scope.answers.length; i++)
+                                $scope.answers[i].correct = $scope.correctIndex == i;
+                        };
+
+
+                        $scope.fields = [];
+                        var fieldsRef = DataFactory.fields();
+                        fieldsRef.once("value").then(function (snapshot){
+                            var results = snapshot.val();
+
+                            for (key in results){
+                                $scope.fields.push(angular.extend(results[key], { id: key }));
+                            }
+                        });
+
+                        $scope.topics = [];
+                        $scope.loadTopics = function(){
+                            var topicsRef = DataFactory.topics($scope.model.fieldId);
+
+                            $scope.topics = [];
+                            topicsRef.once("value").then(function (snapshot){
+                                var results = snapshot.val();
+                                $scope.topics = [];
+
+                                for (key in results){
+                                    $scope.topics.push(angular.extend(results[key], { id: key }));
+                                }
+                            });
+                        };
+
+                        $scope.posts = [];
+                        $scope.loadPosts = function(){
+                            var postsRef = DataFactory.posts();
+
+                            $scope.posts = [];
+                            postsRef.orderByChild("topicId").equalTo($scope.model.topicId).once("value").then(function (snapshot){
+                                var results = snapshot.val();
+                                $scope.posts = [];
+
+                                for (key in results){
+                                    $scope.posts.push(angular.extend(results[key], { id: key }));
+                                }
+
+                                $scope.$apply();
+                            });
+                        };
+
+                        //todo: persist each answer separately so firebase would generate the keys for u.
+                        $scope.saveQuestion = function (){
+                            var questionsRef = DataFactory.questions();
+                            questionsRef.push($scope.model).then(function (data){
+                                var answersRef = DataFactory.answers(data.key);
+                                for (var i = 0; i < $scope.answers.length; i++){
+                                    answersRef.push($scope.answers[i]);
+                                }
+                                Notification.success("Question saved!!");
+
+                                // reset the model for the next question.
+                                $scope.model = {
+                                    fieldId: null,
+                                    topicId: null,
+                                    postId: null,
+                                    question: ""
+                                };
+
+                                $scope.answers = [];
+                                $scope.correctIndex = 0;
+                            });
+                        }
+                    }
                 }
             }
         });

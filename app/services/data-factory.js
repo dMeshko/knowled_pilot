@@ -32,6 +32,10 @@ app.factory("DataFactory", ["FirebaseFactory", function (FirebaseFactory){
         return FirebaseFactory.ref("/questions/");
     };
 
+    factory.answers = function (questionId){
+        return FirebaseFactory.ref("/questions/" + questionId + "/answers/");
+    };
+
     factory.users = function (){
         return FirebaseFactory.ref("/users/");
     };
