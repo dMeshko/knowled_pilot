@@ -316,6 +316,36 @@ app.config([
             }
         });
 
+        $stateProvider.state("app.quizResults", {
+            url: "quizResults",
+            views: {
+                "content@": {
+                    controller: function ($scope, $rootScope, $cookies, DataFactory) {
+                        $scope.results = {};
+
+                        if (!$rootScope.currentUser)
+                        {
+                            var user = JSON.parse($cookies.get("currentUser") || null);
+                            if (!!user)
+                                $rootScope.currentUser = user;
+                            else
+                            {
+                                if ($state.current.name === "app.create" || $state.current.name === "app.quiz")
+                                    $state.go("app.login");
+                            }
+                        }
+
+                        DataFactory.getQuizResults($rootScope.currentUser.id).once("value").then(function (snapshot) {
+                            $scope.results = snapshot.val();
+                            console.log($scope.results);
+                            $scope.$apply();
+                        });
+                    },
+                    templateUrl: "./views/quiz/quiz-results.html"
+                }
+            }
+        });
+
         $stateProvider.state("app.learn.generic.topic.post", { // posts showcase
             url: "/:postId",
             views: {

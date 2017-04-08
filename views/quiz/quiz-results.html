@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>My Scores</h1>
+
+            <div ng-repeat="result in results" class="row resultDiv" ng-class="result.points > 0 ? 'pass':'fail'">
+                <div class="col-md-12">
+                    <p style="font-size: 23px;">
+                        Points: {{ ::result.points }}
+                    </p>
+                    <p style="font-size: 14px">
+                        {{ ::result.timestamp }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

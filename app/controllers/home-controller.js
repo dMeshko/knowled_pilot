@@ -13,7 +13,7 @@ app.controller("HomeController", ["$scope", "DataFactory", "$rootScope", "Notifi
                 $state.go("app.login");
         }
     }
-
+    
     var postsRef = DataFactory.posts(), initialLoad = true;
     postsRef.once("value", function(data) {
         if (!!$scope.currentUser){

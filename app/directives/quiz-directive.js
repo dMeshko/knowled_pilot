@@ -14,7 +14,7 @@ app.directive("quiz", [
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
                         templateUrl: './app/directives/quiz.html',
-                        controller: function ($scope, QuizDatabase, field, topic, maxQuestions, $uibModalInstance){
+                        controller: function ($scope, $rootScope, QuizDatabase, field, topic, maxQuestions, $uibModalInstance, DataFactory){
                             field = field || QuizDatabase.getRandomField();
                             var questions = !!topic ? QuizDatabase.getSpecificTopic(field, topic) : QuizDatabase.getRandomTopic(field);
                             maxQuestions = maxQuestions || 5; // try to get at most maxQuestions, if not specified - defaults to 5
@@ -76,6 +76,18 @@ app.directive("quiz", [
                                         else // the answer is wrong
                                             points += wrongAnswerPoints;
 
+                                var now = moment().format("MMM Do YYYY, h:mm:ss a");
+                                console.log(now);
+
+                                var quizResults = {
+                                    points: points,
+                                    timestamp: now
+                                };
+
+                                if($rootScope.currentUser != null) {
+                                    DataFactory.getQuizResults($rootScope.currentUser.id).push(quizResults);
+                                }
+
                                 $uibModalInstance.close(); // close the quiz modal
 
                                 // summon the results modal
@@ -131,9 +143,8 @@ app.directive("quiz", [
                                             }
                                         }
                                 });
-
+                                
                                 // reset values here for futures usage
-
                             };
                         },
                         size: "lg",

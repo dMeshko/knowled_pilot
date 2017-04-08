@@ -44,5 +44,9 @@ app.factory("DataFactory", ["FirebaseFactory", function (FirebaseFactory){
         return FirebaseFactory.ref("/users/" + userId);
     };
 
+    factory.getQuizResults = function (userId) {
+        return FirebaseFactory.ref("/users/" + userId + "/quizResults/");
+    };
+    
     return factory;
 }]);

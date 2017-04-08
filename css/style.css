@@ -114,3 +114,15 @@ ul.hidden-list{
 label{
     font-size: 20px;
 }
+
+.resultDiv{
+    margin: 20px 0;
+}
+
+.pass{
+    background-color: #D1F2EB;
+}
+
+.fail{
+    background-color: #FADBD8;
+}
