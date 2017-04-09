@@ -77,9 +77,10 @@ app.directive("quiz", [
                                             points += wrongAnswerPoints;
 
                                 var now = moment().format("MMM Do YYYY, h:mm:ss a");
-                                console.log(now);
 
                                 var quizResults = {
+                                    field: field,
+                                    topic: topic,
                                     points: points,
                                     timestamp: now
                                 };

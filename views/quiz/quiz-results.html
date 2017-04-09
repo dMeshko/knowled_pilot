@@ -1,10 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div ng-if="results" class="col-md-12">
             <h1>My Scores</h1>
 
             <div ng-repeat="result in results" class="row resultDiv" ng-class="result.points > 0 ? 'pass':'fail'">
                 <div class="col-md-12">
+                    <p style="font-size: 23px;">Field: {{ ::result.field}} </p>
+                    <p style="font-size: 23px;">Topic: {{ ::result.topic }}</p>
                     <p style="font-size: 23px;">
                         Points: {{ ::result.points }}
                     </p>
@@ -13,6 +15,10 @@
                     </p>
                 </div>
             </div>
+        </div>
+
+        <div ng-if="!results">
+            <h1>No scores yet</h1>
         </div>
     </div>
 </div>
