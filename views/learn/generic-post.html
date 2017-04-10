@@ -1,7 +1,16 @@
 <h1>{{ post.title }}</h1>
 <p ng-bind-html="post.content"></p>
-<div class="col-md-12">
+
+<div class="row" style="margin-top: 50px;">
+
+    <div class="col-md-4 col-md-offset-4">
+        <button class="btn btn-primary btn-block" quiz field="biology" topic="basics" max-questions="4">Attempt Quiz</button>
+        <br>
+        <br>
+    </div>
+</div>
+<div class="col-xs-12">
     <hr>
-    <a ng-show="previousPost" ui-sref="app.learn.generic.topic.post({ fieldId: previousPost.fieldId, topicId: previousPost.topicId, postId: previousPost.id })" class="pull-left next"><i class="fa fa-arrow-left" aria-hidden="true"></i> {{ previousPost.title }}</a>
-    <a ng-show="nextPost" ui-sref="app.learn.generic.topic.post({ fieldId: nextPost.fieldId, topicId: nextPost.topicId, postId: nextPost.id })" class="pull-right next">{{ nextPost.title }} <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    <a ng-show="previousPost" ui-sref="app.learn.generic.topic.post({ fieldId: previousPost.fieldId, topicId: previousPost.topicId, postId: previousPost.id })" class="pull-left col-xs-6 next"><i class="fa fa-arrow-left" aria-hidden="true"></i> {{ previousPost.title }}</a>
+    <a ng-show="nextPost" ui-sref="app.learn.generic.topic.post({ fieldId: nextPost.fieldId, topicId: nextPost.topicId, postId: nextPost.id })" class="pull-right col-xs-6 next">{{ nextPost.title }} <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 </div>

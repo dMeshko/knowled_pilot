@@ -366,29 +366,50 @@ app.config([
                         });
 
                         function getNextPost() {
-                            DataFactory.posts().orderByKey().startAt($scope.lastKey).limitToFirst(2).once("value").then(function (snapshot) {
+                            DataFactory.posts().orderByChild("fieldId").equalTo($stateParams.fieldId).once("value").then(function (snapshot) {
                                 var result = snapshot.val();
                                 var posts = [];
 
+                                var i = 0;
+                                var currentIndex = -1;
+
                                 Object.keys(result).map(function(key){
+                                    if ($scope.postId == key)
+                                        currentIndex = i;
                                     posts.push(angular.extend(result[key], {id: key}));
+                                    i++;
                                 });
 
-                                $scope.nextPost = posts[1];
+                                if (currentIndex == posts.length - 1)
+                                    currentIndex = 0;
+                                else
+                                    currentIndex++;
+
+                                $scope.nextPost = posts[currentIndex];
                                 $scope.$apply();
                             });
                         }
 
                         function getPreviousPost() {
-                            DataFactory.posts().orderByKey().endAt($scope.lastKey).once("value").then(function (snapshot) {
+                            DataFactory.posts().orderByChild("fieldId").equalTo($stateParams.fieldId).once("value").then(function (snapshot) {
                                var result = snapshot.val();
                                 var posts = [];
 
+                                var i = 0;
+                                var currentIndex = -1;
                                 Object.keys(result).map(function(key) {
+                                    if ($scope.postId == key)
+                                        currentIndex = i;
                                     posts.push(angular.extend(result[key], {id: key}));
+                                    i++;
                                 });
 
-                                $scope.previousPost = posts[posts.length - 2];
+                                if (currentIndex == 0)
+                                    currentIndex = posts.length - 1;
+                                else
+                                    currentIndex--;
+
+                                $scope.previousPost = posts[currentIndex];
                                 $scope.$apply();
                             });
                         }

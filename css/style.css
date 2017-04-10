@@ -126,3 +126,18 @@ label{
 .fail{
     background-color: #FADBD8;
 }
+
+.red-text{
+    color: #eb6864;
+}
+
+@media (max-width: 767px)
+{
+    .dropdown-menu {
+        display: none !important;
+    }
+
+    .open .dropdown-menu {
+        display: block !important;
+    }
+}
